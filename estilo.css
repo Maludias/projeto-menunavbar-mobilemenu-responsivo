@@ -1,0 +1,120 @@
+:root{
+    --black:#141414;
+    --pink: rgb(216, 57, 84);
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background-color: var(--black);
+
+}
+
+header nav a{
+    text-decoration: none;
+    color: pink;
+    transition: 0.5s;
+}
+a:hover{
+    color: rgba(24, 6, 14, 0.938);
+
+}
+
+.logo{
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(155, 41, 85);
+    height: 8vh;
+}
+
+
+.naveg-list{
+    list-style: none;
+    display: flex;
+}
+
+.naveg-list li{
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.res-menu{
+    display: none;
+    cursor: pointer;
+}
+
+.res-menu div{
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+@media (max-width: 999px){
+
+    body{
+        overflow-x: hidden ;
+    }
+       .naveg-list{
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 40vw;
+        height: 92vh;
+        background:rgb(155, 41, 85) ;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    .naveg-list li{
+        margin-left: 0;
+        opacity: 0;
+    }
+    .res-menu{
+        display: block;
+    }
+}
+.naveg-list.active{
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.res-menu.active .linha1 {
+
+    opacity: 0;
+}
+
+.res-menu.active .linha2 {
+   
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.res-menu.active .linha3 {
+    
+    transform: rotate(45deg) translate(-5px, 7px);
+}
+
